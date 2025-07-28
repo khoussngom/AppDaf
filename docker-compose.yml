@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: appdaf-app
+    ports:
+      - "8090:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_DRIVER=pgsql
+      - DB_HOST=interchange.proxy.rlwy.net
+      - DB_PORT=47627
+      - DB_NAME=railway
+      - DB_USER=postgres
+      - DB_PASS=FMFHHhXlvIingoYbqOvLGpRBmTtWBZxg
+      - DB_CHARSET=utf8mb4
+    restart: unless-stopped
+    networks:
+      - appdaf-network
+
+networks:
+  appdaf-network:
+    driver: bridge

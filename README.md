@@ -27,12 +27,14 @@ Une API REST en PHP pour la gestion des informations des citoyens.
 
 ## 🚀 Installation
 
-### Prérequis
+### Option 1: Installation traditionnelle
+
+#### Prérequis
 - PHP 8.1+
 - PostgreSQL
 - Composer
 
-### Installation
+#### Installation
 1. Cloner le projet
 ```bash
 git clone [URL_DU_REPO]
@@ -68,16 +70,50 @@ php database/run-migrations.php
 php database/run-seeders.php
 ```
 
+### Option 2: Installation avec Docker 🐳
+
+#### Prérequis
+- Docker et Docker Compose installés
+- PostgreSQL configuré (local ou externe)
+
+#### Installation rapide
+```bash
+# 1. Configurer l'environnement
+cp .env.docker .env
+# Éditez .env avec vos paramètres PostgreSQL
+
+# 2. Déployer l'application
+./deploy.sh dev
+```
+
+Pour plus de détails sur Docker, consultez [DOCKER.md](DOCKER.md).
+
 ## 🖥️ Utilisation
 
-### Démarrer le serveur de développement
+### Serveur traditionnel
 ```bash
 php -S localhost:8000 -t public
 ```
 
+### Avec Docker
+```bash
+# Développement (port 8080)
+docker-compose up -d
+
+# Production (port 80)
+docker-compose -f docker-compose.prod.yml up -d
+```
+
 ### Tester l'API
 ```bash
+# Serveur traditionnel
 curl "http://localhost:8000/api/cni?nci=1895200000231"
+
+# Docker (développement)
+curl "http://localhost:8080/api/cni?nci=1895200000231"
+
+# Docker (production)
+curl "http://localhost/api/cni?nci=1895200000231"
 ```
 
 ## 📡 Endpoints

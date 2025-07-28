@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+docker-compose.prod.yml
+.dockerignore
+
+# Documentation
+README.md
+*.md
+
+# Logs
+*.log
+
+# Cache et fichiers temporaires
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Fichiers de développement
+.env.local
+.env.development
