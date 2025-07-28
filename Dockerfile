@@ -31,8 +31,9 @@ COPY . .
 # Installer les dépendances Composer
 RUN composer install --optimize-autoloader --no-dev
 
-# Créer le fichier .env à partir de .env.example si il n'existe pas
-RUN if [ ! -f .env ]; then cp .env.example .env; fi
+# S'assurer que le fichier .env existe et a les bonnes permissions
+COPY .env .env
+RUN chmod 644 .env
 
 # Modifier les permissions
 RUN chown -R www-data:www-data /var/www/html \
