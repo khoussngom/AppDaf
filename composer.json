@@ -1,0 +1,25 @@
+{
+    "name": "dialibatoul-marakhib/app-daf",
+    "autoload": {
+        "psr-4": {
+            "DialibatoulMarakhib\\AppDaf\\": "src/",
+            "App\\Controller\\": "src/controller/",
+            "App\\Entity\\": "src/entity/",
+            "App\\Services\\": "src/services/",
+            "App\\Repository\\": "src/repository/",
+            "App\\Core\\": "app/core/",
+            "App\\": "app/",
+            "App\\Config\\": "app/config/",
+            "App\\Interface\\": "src/interface/"
+
+        }
+    },
+    "authors": [{
+        "name": "khoussngom",
+        "email": "khoussn@gmail.com"
+    }],
+    "require": {
+        "cloudinary/cloudinary_php": "^3.1",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
