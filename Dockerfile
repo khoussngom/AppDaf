@@ -31,9 +31,8 @@ COPY . .
 # Installer les dépendances Composer
 RUN composer install --optimize-autoloader --no-dev
 
-# S'assurer que le fichier .env existe et a les bonnes permissions
-COPY .env .env
-RUN chmod 644 .env
+# Vérifier que le fichier .env existe et définir les bonnes permissions
+RUN if [ -f .env ]; then chmod 644 .env; else echo "Fichier .env non trouvé, utilisation des variables d'environnement Docker"; fi
 
 # Modifier les permissions
 RUN chown -R www-data:www-data /var/www/html \
