@@ -17,7 +17,7 @@ class Database implements DatabaseInterface
 
     public function connectDatabase()
     {
-        // Log de la configuration pour debug
+    
         error_log("Configuration DB: " . json_encode([
             'driver' => $this->config['driver'],
             'host' => $this->config['host'],
@@ -37,7 +37,7 @@ class Database implements DatabaseInterface
         try {
             $pdo = new PDO($dsn, $this->config['username'], $this->config['password'], [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_TIMEOUT => 30, // Timeout de 30 secondes
+                PDO::ATTR_TIMEOUT => 30, 
             ]);
             return $pdo;
         } catch (PDOException $e) {
