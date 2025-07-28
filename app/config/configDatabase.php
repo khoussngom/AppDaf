@@ -4,7 +4,7 @@ use Dotenv\Dotenv;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-if (file_exists(dirname(__DIR__,2) . '/.env') && !getenv('DB_HOST')) {
+if (!getenv('DB_HOST') && file_exists(dirname(__DIR__,2) . '/.env')) {
     $dotenv = Dotenv::createImmutable(dirname(__DIR__,2));
     $dotenv->load();
 }
