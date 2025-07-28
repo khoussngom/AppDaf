@@ -9,17 +9,15 @@ class CitoyenSeeder
 {
     public function run($pdo)
     {
-        // Données initiales
         $citoyens = [
             [
                 'nci' => '1895200000231',
                 'prenom' => 'Khouss',
                 'nom' => 'Ngom',
-                'date_naissance' => '1989-05-20',
+                'date_naissance' => '2000-03-21',
                 'adresse' => 'Dakar',
                 'photo' => null
             ],
-            // Vous pouvez ajouter d'autres citoyens ici
         ];
 
         $sql = "
@@ -40,9 +38,9 @@ class CitoyenSeeder
                     'adresse' => $citoyen['adresse'],
                     'photo' => $citoyen['photo']
                 ]);
-                echo "✅ Citoyen {$citoyen['prenom']} {$citoyen['nom']} ajouté.\n";
+                echo " Citoyen {$citoyen['prenom']} {$citoyen['nom']} ajouté.\n";
             } catch (PDOException $e) {
-                echo "❌ Erreur lors de l'ajout de {$citoyen['prenom']} {$citoyen['nom']}: " . $e->getMessage() . "\n";
+                echo "Erreur lors de l'ajout de {$citoyen['prenom']} {$citoyen['nom']}: " . $e->getMessage() . "\n";
             }
         }
     }

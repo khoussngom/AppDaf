@@ -17,9 +17,8 @@ class Database implements DatabaseInterface
 
     public function connectDatabase()
     {
-        // Construire le DSN selon le driver
         if ($this->config['driver'] === 'postgres' || $this->config['driver'] === 'pgsql') {
-            $dsn = "pgsql:host={$this->config['host']};dbname={$this->config['dbname']}";
+        $dsn = "pgsql:host={$this->config['host']};port={$this->config['port']};dbname={$this->config['dbname']}";
         } else {
             $dsn = "{$this->config['driver']}:host={$this->config['host']};dbname={$this->config['dbname']};charset={$this->config['charset']}";
         }

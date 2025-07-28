@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Migration: Créer la table citoyen
- * Date: 2025-07-28
- */
-
 class CreateCitoyenTable
 {
     public function up($pdo)
@@ -24,13 +19,13 @@ class CreateCitoyenTable
         ";
         
         $pdo->exec($sql);
-        echo "✅ Table 'citoyen' créée avec succès.\n";
+        echo " Table 'citoyen' créée avec succès.\n";
     }
 
     public function down($pdo)
     {
         $sql = "DROP TABLE IF EXISTS citoyen";
         $pdo->exec($sql);
-        echo "❌ Table 'citoyen' supprimée.\n";
+        echo " Table 'citoyen' supprimée.\n";
     }
 }

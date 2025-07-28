@@ -10,6 +10,7 @@ $dotenv->load();
 return [
     'driver'   => $_ENV['DB_DRIVER'] ?? 'postgres',
     'host'     => $_ENV['DB_HOST'] ?? 'localhost',
+    'port'     => $_ENV['DB_PORT'] ?? '5432',
     'dbname'   => $_ENV['DB_NAME'] ?? 'appdaf',
     'charset'  => $_ENV['DB_CHARSET'] ?? 'utf8',
     'username' => $_ENV['DB_USER'] ?? 'postgres',
